@@ -1,0 +1,129 @@
+.team-page {
+    .pageBannerWrapper {
+        .pageBannerRight {
+            background-position: 34%;
+        }
+    }
+
+    .teamMembers {
+        padding: 15.8% 4.2% 5%;
+        background-color: $darkBackground;
+
+        &Title {
+            text-align: center;
+            font-size: 4.1vw;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+            color: $text-creamy;
+            font-weight: bold;
+            margin-bottom: 4.3%;
+        }
+
+        &List {
+            display: flex;
+            flex-wrap: wrap;
+
+            &Item {
+                width: 32%;
+                margin-right: 2%;
+                margin-bottom: 5.5%;
+                color: $text-creamy;
+
+                &:nth-of-type(3n) {
+                    margin-right: 0;
+                }
+
+                &Avatar {
+                    background: center no-repeat;
+                    background-size: cover;
+                    width: 35.5%;
+                    padding-top: 35.5%;
+                    margin-bottom: 8.9%;
+                }
+
+                &Name {
+                    font-family: $font-family-b;
+                    text-transform: uppercase;
+                    font-size: 2.6vw;
+                    font-weight: 200;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                &Position {
+                    font-family: $font-family-m;
+                    font-style: italic;
+                    font-weight: 200;
+                    margin: .7rem 0 1.5rem;
+                    letter-spacing: .7px;
+                    font-size: 1.25vw;
+                }
+
+                &Desc {
+                    font-family: $font-family-m;
+                    font-weight: 200;
+                    line-height: 1.35;
+                    font-size: 1.2vw;
+                    opacity: 0.5;
+                    padding-right: 1rem;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 480px) {
+    .team-page {
+        .pageBannerWrapper {
+            .pageBannerRight {
+                background-position: 45%;
+            }
+        }
+
+        .teamMembers {
+            &Title {
+                text-align: left;
+                font-size: 7.8vw;
+                margin-bottom: 14.6%;
+            }
+
+            &List {
+                &Item {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-bottom: 15%;
+
+                    &Wrapper {
+                        display: flex;
+                        align-items: flex-start;
+                        margin-bottom: 10%;
+
+                        &Info {
+                            width: 70.9%;
+                            padding-left: 8.8%;
+                        }
+                    }
+
+                    &Avatar {
+                        width: 29.1%;
+                        margin-bottom: 0;
+                        padding-top: 29.1%;
+                    }
+
+                    &Name {
+                        font-size: 6.4vw;
+                    }
+
+                    &Position {
+                        font-size: 4.6vw;
+                    }
+
+                    &Desc {
+                        font-size: 4.8vw;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

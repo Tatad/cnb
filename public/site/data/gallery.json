@@ -1,0 +1,22 @@
+{
+    "space": [
+        "site/media/images/banners/memberships.png",
+        "site/media/images/banners/philosophyBanner.png",
+        "site/media/images/banners/registrationBanner.png",
+        "site/media/images/banners/servicesBanner.png"
+    ],
+    "services": [
+        "site/media/images/gallery/galleryServices4.jpg",
+        "site/media/images/gallery/galleryServices2.jpg",
+        "site/media/images/gallery/galleryServices3.jpg",
+        "site/media/images/gallery/galleryServices1.jpg",
+        "site/media/images/gallery/galleryServices5.jpg"
+    ],
+    "team": [
+        "site/media/images/gallery/galleryTeam3.jpg",
+        "site/media/images/gallery/galleryTeam4.jpg",
+        "site/media/images/gallery/galleryTeam5.jpg",
+        "site/media/images/gallery/galleryTeam1.jpg",
+        "site/media/images/gallery/galleryTeam2.jpg"
+    ]
+}

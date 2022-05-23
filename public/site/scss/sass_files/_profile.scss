@@ -1,0 +1,90 @@
+.profile-page {
+    background-color: $darkBackground;
+
+    padding: 12% 35.4% 8%;
+
+    .simplyBookLink {
+        color: $text-creamy;
+        margin: 0 auto 4rem 0.5rem;
+        font-size: 1.7vw;
+
+        &::before {
+            height: 100%;
+        }
+    }
+
+    .formBlock {
+        width: 100%;
+
+        button {
+            margin: 2rem 0 0 !important;
+            padding-left: 2rem !important;
+
+            &::before {
+                left: 6% !important;
+            }
+        }
+    }
+
+    .formSection {
+        margin-bottom: 3.5rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &Header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.6rem 0 2rem;
+
+            .blockTitle, .linkItem {
+                margin: 0 !important;
+                color: $text-creamy;
+            }
+
+            .linkItem {
+                &::before {
+                    height: 120%;
+                }
+            }
+        }
+
+        .informationBlock {
+            display: flex;
+            flex-wrap: wrap;
+
+            &Item {
+                width: 50%;
+                margin-bottom: 1.7rem;
+
+                &.fullWidth {
+                    width: 100%;
+                }
+
+                p {
+                    font-family: $font-family-m;
+                    font-weight: 200;
+                    font-size: 1.18vw;
+
+                    &.key {
+                        color: #C48879;
+                        margin-bottom: 0.7rem;
+                    }
+
+                    &.value {
+                        color: $text-creamy;
+                    }
+                }
+            }
+        }
+
+        .editableBlock {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+}

@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: Maeutica
+  version: 3.0.0
+
+paths:
+  /cities:
+    get:
+      tags:
+        - Cities
+      summary: Get cities
+      parameters:
+          schema:
+            type: string
+            default: maeutica
+
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/defaultSuccess"
+        "400":
+          description: error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/defaultError"
+
+components:
+  requestBodies:
+    login:
+      content:
+          application/json:
+          schema:
+            $ref: "#/components/schemas/login"
+      required: true
+  schemas:
+    defaultError:
+      allOf:
+        - properties:
+            code:
+              type: integer
+            status:
+              type: string
+            message:
+              type: string
+            params:
+              type: object
+    defaultSuccess:
+      allOf:
+        - properties:
+            code:
+              type: integer
+            status:
+              type: string
+            message:
+              type: string
+            params:
+              type: object
+
+

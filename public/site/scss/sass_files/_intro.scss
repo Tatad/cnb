@@ -1,0 +1,201 @@
+.introWrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99;
+    padding-top: 4.3%;
+    font-family: $font-family-b;
+    background: url("/site/media/videos/videoBackgroundNew.webp") center no-repeat;
+    background-size: cover;
+    display: none;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.6);
+    }
+
+    & > * {
+        position: absolute !important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    * {
+        color: #efd0c5;
+        user-select: none;
+    }
+
+    .title {
+        text-transform: uppercase;
+        font-size: 1.38vw;
+        letter-spacing: 3.3px;
+        font-weight: bold;
+        opacity: 0;
+    }
+
+    .introLogo {
+        width: 19.7%;
+        position: relative;
+        opacity: 0;
+
+        &.animate {
+            animation: toggleFade 5s ease forwards 5s;
+        }
+
+        &Light {
+            background: center no-repeat url("site/media/images/logo/introLogoLight.png");
+            background-size: contain;
+            width: 100%;
+            padding-top: 57%;
+        }
+
+        @keyframes toggleFade {
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    }
+
+    .actionText {
+        font-weight: 500;
+        font-size: 1.38vw;
+        text-transform: uppercase;
+        position: relative;
+
+        .firstText {
+            opacity: 0;
+            visibility: visible;
+            white-space: nowrap;
+        }
+
+        .secondText {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            will-change: opacity;
+            opacity: 0;
+            color: $soft-pink;
+            pointer-events: none;
+            padding: 1rem;
+
+
+            &::after {
+                content: '';
+                width: calc(100% - 2rem);
+                height: 1px;
+                background-color: rgba($soft-pink, .7);
+                position: absolute;
+                top: calc(105% - 1rem);
+                left: 50%;
+                transform: translate(-50%, 30px);
+                opacity: 0;
+                animation: fadeInAfter 2s ease forwards 15000ms;
+                will-change: transform, opacity;
+            }
+
+            @keyframes fadeInAfter {
+                to {
+                    transform: translate(-50%, 0);
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                .letter:first-of-type::before {
+                    left: -2.5rem;
+                }
+            }
+
+            & > .letter:first-of-type {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -1.5rem;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(40deg);
+                    width: 1px;
+                    height: 120%;
+                    background-color: currentColor;
+                    will-change: left;
+                    transition: left 0.5s ease;
+                }
+            }
+
+            //&.animated {
+            //    visibility: visible;
+            //    transition: visibility 2s step-start;
+            //
+            //    .letter {
+            //        color: inherit;
+            //    }
+            //}
+        }
+    }
+
+    //&.dark {
+    //    background-color: $soft-pink;
+    //
+    //    .title {
+    //        color: $darkBackground;
+    //    }
+    //
+    //    .introLogo {
+    //        &Dark {
+    //            opacity: 1;
+    //        }
+    //
+    //        &Light {
+    //            opacity: 0;
+    //        }
+    //    }
+    //
+    //    .actionText {
+    //        .firstText {
+    //            opacity: 0;
+    //            visibility: hidden;
+    //            transition: opacity 2s ease, visibility 2s step-end;
+    //        }
+    //
+    //        .secondText {
+    //            color: $darkBackground;
+    //        }
+    //    }
+    //}
+
+    &.hideBlock {
+        transition: opacity 1s ease, visibility 1s step-end;
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .introWrapper {
+        .title {
+            white-space: nowrap;
+            font-size: 7vw;
+        }
+
+        .introLogo {
+            width: 60%;
+        }
+
+        .actionText {
+            font-size: 5vw;
+        }
+    }
+}

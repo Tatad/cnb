@@ -1,0 +1,137 @@
+.gallery-page {
+    .galleryWrapper {
+        padding: 13.3% 4.2% 0;
+        background-color: $darkBackground;
+
+        &Head {
+            color: $creamy-color;
+
+            & > h2 {
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 4vw;
+                font-weight: 600;
+                -webkit-font-smoothing: antialiased;
+                letter-spacing: 8px;
+                opacity: 0;
+
+                &::first-letter,
+                & > span:first-of-type {
+                    font-size: 5.8vw;
+                }
+            }
+
+            .filterWrapper {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 3.3rem 0 2rem;
+                opacity: 0;
+                animation: fadeInFilter 1s ease forwards 1.5s;
+
+                &Item {
+                    font-family: $font-family-m;
+                    font-weight: 200;
+                    font-size: 1.1vw;
+                    padding: 0.3rem 0.45rem;
+                    letter-spacing: 0.3px;
+                    opacity: 0.5;
+                    transition: opacity 0.5s ease;
+                    will-change: opacity;
+                    cursor: pointer;
+                    user-select: none;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+
+                    &.active {
+                        opacity: 1 !important;
+                    }
+
+                    &:not(:last-of-type) {
+                        margin-right: 2.8%;
+                    }
+                }
+            }
+        }
+
+        &Body {
+            display: flex;
+            flex-wrap: wrap;
+            animation: fadeInFilter 1s ease forwards 2s;
+            opacity: 0;
+            min-height: 60vh;
+
+            .loaderImage {
+                margin: auto;
+            }
+
+            &Image {
+                background: center no-repeat;
+                background-size: cover;
+                width: 50%;
+                cursor: pointer;
+                padding-top: 45.5%;
+                animation: fade_in 1s ease;
+                &:nth-of-type(3n) {
+                    width: 100%;
+                }
+                @keyframes fade_in {
+                    0% {
+                        opacity: 0;
+                    }
+
+                    100% {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        @keyframes fadeInFilter {
+            to {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-page {
+        .galleryWrapper {
+            padding-top: 32%;
+
+            &Head {
+                & > h2 {
+                    font-size: 8vw;
+                    letter-spacing: 5px;
+
+                    &::first-letter {
+                        font-size: 13vw;
+                    }
+                }
+
+                .filterWrapper {
+                    &Item {
+                        font-size: 4.8vw;
+
+                        &:not(:last-of-type) {
+                            margin-right: 13%;
+                        }
+                    }
+                }
+            }
+
+            &Body {
+                &Image {
+                    padding-top: 72.8%;
+
+                    &:nth-of-type(3n) {
+                        padding-top: 101.9%;
+                    }
+                }
+            }
+        }
+    }
+}

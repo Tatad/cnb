@@ -1,0 +1,328 @@
+.home {
+    &-banner {
+        height: 100vh;
+        background-color: $darkBackground;
+
+        video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+        }
+
+        &-wrapper {
+            width: max-content;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+        }
+
+        &-title {
+            width: 100%;
+            color: $creamy-color;
+            font-size: 5.2vw;
+            text-transform: lowercase;
+            opacity: 0;
+
+            &.letter-animation-bannerTitle {
+                span {
+                    display: inline-block;
+                    opacity: 0;
+                }
+            }
+        }
+
+        &-titleLogo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 10%;
+            padding-top: 10%;
+            transform: translate(-95%, -40%);
+            background-image: url("/site/media/images/bannerLogo.svg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: opacity 1.5s ease;
+            opacity: 0;
+        }
+
+        .scrollBottom {
+            width: 1.7vw;
+            height: 1.7vw;
+            background-image: url("/site/media/images/arrowDown.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+            bottom: 4%;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+        }
+    }
+
+    &-page {
+        .meetOurTeam {
+            height: 100vh;
+            background-image: url("/site/media/images/meetOurTeamHome.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: bottom;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 7.8%;
+            color: $soft-pink;
+            position: relative;
+            font-family: $font-family-b;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $darkBackground;
+                top: 0;
+                left: 0;
+                opacity: 0.6;
+            }
+
+            &Title {
+                text-transform: uppercase;
+                position: relative;
+                font-size: 2.6vw;
+                opacity: 0;
+
+                & > span {
+                    display: inline-block;
+                    opacity: 0;
+                }
+            }
+
+            &Desc {
+                position: relative;
+                margin: 3.6% 0 3.2% 0;
+                font-family: $font-family-m;
+                font-size: 1.3vw;
+                text-align: center;
+                line-height: 1.25;
+                font-weight: 200;
+                width: 30%;
+            }
+
+            &Link {
+                font-size: 1.3vw;
+                padding: 0 0 0 1.5rem;
+                letter-spacing: 0.5px;
+                -webkit-font-smoothing: antialiased;
+
+                &::before {
+                    height: 120%;
+                    left: 5%;
+                }
+            }
+        }
+
+        .sliderSection {
+            width: 100%;
+            padding: 6% 0 4%;
+            background-color: $soft-pink;
+
+            &Title {
+                padding: 0 4.2%;
+                text-transform: uppercase;
+                color: $creamy-color;
+                margin-bottom: 3rem;
+                font-size: 1.74vw;
+            }
+
+            .linkItem {
+                margin: 4rem auto;
+                color: $creamy-color;
+                font-size: 1.35vw;
+                padding-right: 0;
+
+                &::before {
+                    height: 120%;
+                    left: -1%;
+                }
+            }
+
+            & > .swiper-container {
+                padding: 0 4.2%;
+                //cursor: ew-resize;
+
+                .swiper-wrapper {
+                    height: 31.8vw;
+                    will-change: transform;
+
+                    .swiper-slide {
+                        width: auto;
+
+                        &.galleryPopupImage {
+                            padding-top: unset;
+                        }
+                    }
+
+                    .sliderItem {
+                        width: auto;
+                        height: 100%;
+                    }
+                }
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    outline: none !important;
+                    height: 3vw;
+                    box-shadow: none !important;
+                    color: transparent !important;
+                    transform: scaleX(0.8);
+                    will-change: opacity;
+                    transition: opacity 0.4s ease;
+
+                    &.swiper-button-disabled {
+                        opacity: 0;
+                    }
+
+                    &::after {
+                        content: "";
+                        background-image: url("site/media/images/arrowRight.svg");
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .swiper-button-next {
+                    right: 5%;
+                }
+
+                .swiper-button-prev {
+                    left: 5%;
+
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+
+
+            &Link {
+                font-size: 1.4vw;
+                color: $soft-pink;
+                margin: 4% auto 0;
+
+                &::before {
+                    left: -3%;
+                    height: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        &-banner {
+            &-wrapper {
+                // bottom: 15%;
+                left: 55%;
+                text-align: center;
+                width: 100%;
+            }
+
+            &-title {
+                font-size: 12vw;
+            }
+
+            &-titleLogo {
+                width: 17%;
+                padding-top: 17%;
+                left: 22%;
+            }
+        }
+
+        &-page {
+            .meetOurTeam {
+                padding-bottom: 16.2%;
+
+                &Title {
+                    font-size: 8vw;
+                }
+
+                &Desc {
+                    font-size: 4.8vw;
+                    padding: 0 10%;
+                    margin: 10.7% 0 6.2%;
+                    width: 100%;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                &Link {
+                    font-size: 5.3vw;
+
+                    &::before {
+                        left: -2%;
+                    }
+                }
+            }
+
+            .sliderSection {
+                padding: 33% 0;
+
+                .linkItem {
+                    display: flex;
+                    margin: 2rem auto 0;
+                    font-size: 5.5vw;
+                    color: $creamy-color;
+
+                    &::before {
+                        left: -3%;
+                        height: 120%;
+                    }
+                }
+
+                .swiper-container {
+                    padding: 0 6%;
+
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        height: 8vw;
+                    }
+
+                    .swiper-wrapper {
+                        height: 100vw;
+
+                        .sliderItem {
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                }
+
+                &Title {
+                    font-size: 7.2vw;
+                    justify-content: center;
+
+                    .linkItem {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

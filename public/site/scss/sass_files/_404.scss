@@ -1,0 +1,25 @@
+.notFound-page {
+    height: 100vh;
+    background-color: $darkBackground;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 200;
+        color: $text-creamy;
+        font-size: 3.01vw;
+        font-family: $font-family-m;
+        width: 100%;
+
+        .middleLine {
+            height: 6vw;
+            margin: 0 2%;
+            width: 1px;
+            background-color: $text-creamy;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 167.315 62.008">
+    <defs>
+        <style>.a,.b{fill:#efd0c5;}.a{font-size:20px}</style>
+    </defs>
+    <g transform="translate(-1677.685 -940)">
+        <text id="textBecome" class="a" transform="translate(1731 971)">
+            <tspan x="0" y="0">BECOME</tspan>
+            <tspan x="0" y="25">A MEMBER</tspan>
+        </text>
+        <g transform="translate(1677.685 940)">
+            <g transform="translate(0 0)">
+                <path class="b"
+                      d="M2114.98,2341.832v.69l-3.661.051c-19.562,0-39.881,51.869-43.4,61.267h-1.25c1.2-5.752,5.811-27.586,9.61-41.843,3.926-14.725,11.063-19.216,22.5-20.023,1.4-.1,7.188-.142,8.724-.142Zm-42.957,62.008,25.579-30.062h-1.526l-25.58,30.063Z"
+                      transform="translate(-2066.665 -2341.832)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,302 @@
+.registration-page {
+    background-color: $darkBackground;
+
+    .pageBanner {
+        &Left {
+            justify-content: flex-start;
+            padding: 15% 4.2% 0;
+
+            & > span,
+            .buttonsWrapper > span {
+                font-family: $font-family-m;
+                color: rgba($text-creamy, 0.5);
+                font-weight: 200;
+                font-size: 1.2vw;
+            }
+
+            .linkItem {
+                margin-top: 1.3rem;
+                -webkit-font-smoothing: antialiased;
+                letter-spacing: 0.3px;
+                padding-left: 1.5rem;
+                font-size: 1.3vw;
+
+                &::before {
+                    left: 3%;
+                }
+            }
+
+            .buttonsWrapper {
+                * {
+                    outline: none !important;
+                }
+
+                .nextStepButton {
+                    .lineCrate {
+                        letter-spacing: -1.7px;
+                    }
+                }
+
+                .prevStepButton {
+                    display: inline-block;
+                    margin-top: 1.5rem;
+                    cursor: pointer;
+                    font-size: 1.15vw;
+                    letter-spacing: 0.3px;
+                }
+            }
+        }
+    }
+
+    .formBlock {
+        .formInputsWrapper {
+            width: 69%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.registrationPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    z-index: 100;
+    @extend .centeredFlexBox;
+    font-family: $font-family-b;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s ease, visibility .5s step-end;
+
+    &.show {
+        transition: opacity .5s ease, visibility .5s step-start;
+        visibility: visible;
+        opacity: 1;
+
+        .registrationPopupWrapper {
+            opacity: 1;
+        }
+    }
+
+    &CloseLayer {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.4);
+    }
+
+    &Wrapper {
+        padding: 5%;
+        font-size: 1.5vw;
+        width: 50%;
+        color: $darkBackground;
+        background-color: rgba($creamy-color, 0.9);
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity .5s ease, transform .5s ease;
+        position: relative;
+
+        .close-popup-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: center no-repeat;
+            background-size: contain;
+        }
+
+        &Content {
+            &>h1 {
+                text-align: center;
+                margin-bottom: 4.5rem;
+                padding-bottom: .5rem;
+                border-bottom: 1px solid $darkBackground;
+            }
+
+            .lineBreak {
+                width: 100%;
+                height: 1px;
+                background-color: $darkBackground;
+                margin: 1rem 0;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+
+            &List {
+                display: flex;
+                justify-content: space-between;
+
+                .key {
+                    font-size: 1.5vw;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                .value {
+                    font-size: 1.4vw;
+                }
+            }
+        }
+
+        .paymentButton {
+            &::before {
+                height: 120%;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 480px) {
+    .registration-page {
+        .mobilePageBanner {
+            width: 100%;
+            padding-top: 58%;
+            background: center no-repeat;
+            background-size: cover;
+        }
+
+        .pageBanner {
+            min-height: 100vh !important;
+
+            &Left {
+                z-index: 1;
+                position: relative;
+                padding-top: 30%;
+
+                .radioInput {
+                    margin: 6vw 0 5vw;
+
+                    .initialLabel {
+                        padding-bottom: 0 !important;
+                    }
+                }
+
+                .blockTitle {
+                    font-size: 8vw;
+                }
+
+                > span {
+                    font-size: 5vw;
+                }
+
+                > h3 {
+                    font-size: 8vw;
+                }
+
+                h2,
+                p {
+                    text-align: center;
+                }
+
+                .buttonsWrapper {
+                    text-align: center;
+                    width: 100%;
+
+                    .linkItem {
+                        margin-top: 0 !important;
+                    }
+
+                    .prevStepButton {
+                        margin-top: 2rem;
+                    }
+
+                    .linkItem,
+                    .prevStepButton {
+                        font-size: 1.4rem;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+
+                .nextStepButton {
+                    font-size: 5.5vw !important;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 0;
+                    padding-left: 2.5rem !important;
+
+                    &::before {
+                        left: 4% !important;
+                    }
+                }
+
+            }
+
+            &Right {
+                display: none;
+            }
+        }
+
+        .formBlock {
+            .formInputsWrapper {
+                margin-top: 3rem;
+                width: 100%;
+
+                .inputWrapper {
+                    &:nth-of-type(1n) {
+                        margin-bottom: 10vw;
+                    }
+
+                    label, input {
+                        padding-bottom: 10px;
+                        font-size: 1.1rem;
+
+                        &:-webkit-autofill::first-line {
+                            font-size: 1.1rem;
+                        }
+                    }
+
+                    input:not(:placeholder-shown) ~ .initialLabel {
+                        transform: translateY(-150%);
+                    }
+
+                    input:focus ~ .initialLabel {
+                        transform: translateY(-150%);
+                    }
+                }
+            }
+        }
+    }
+
+    .registrationPopup {
+        &Wrapper {
+            width: 90%;
+            padding: 10% 5%;
+
+            .close-popup-btn {
+                width: 20px;
+                height: 20px;
+            }
+
+            &Content {
+                &>h1 {
+                    font-size: 7vw;
+                    margin-bottom: 3rem;
+                }
+
+                &List {
+                    flex-direction: column;
+                    justify-content: unset;
+
+                    .key {
+                        font-size: 5.5vw;
+                    }
+
+                    .value {
+                        font-size: 4.8vw;
+                    }
+                }
+            }
+
+            .linkItem {
+                font-size: 5vw;
+            }
+        }
+    }
+}

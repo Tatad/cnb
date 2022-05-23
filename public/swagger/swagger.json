@@ -1,0 +1,868 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "InClassica",
+        "version": "0.0.1"
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/home": {
+            "get": {
+                "tags": [
+                    "Home banner"
+                ],
+                "summary": "Get banner",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/about": {
+            "get": {
+                "tags": [
+                    "About"
+                ],
+                "summary": "Get about",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/news": {
+            "get": {
+                "tags": [
+                    "News"
+                ],
+                "summary": "Get news",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                      "in": "query",
+                      "name": "page"
+                    },
+                    {
+                      "in": "query",
+                      "name": "limit"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/news/{url}": {
+            "get": {
+                "tags": [
+                    "News"
+                ],
+                "summary": "Get singe news",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "url",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/faqs": {
+            "get": {
+                "tags": [
+                    "FAQ"
+                ],
+                "summary": "Get FAQ",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/faqs/{id}": {
+            "get": {
+                "tags": [
+                    "FAQ"
+                ],
+                "summary": "Get singe FAQ",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/contacts": {
+            "get": {
+                "tags": [
+                    "Useful Contacts"
+                ],
+                "summary": "Get Contacts",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/contacts/{id}": {
+            "get": {
+                "tags": [
+                    "Useful Contacts"
+                ],
+                "summary": "Get singe Contacts",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/official/contacts": {
+            "get": {
+                "tags": [
+                    "Official Contacts"
+                ],
+                "summary": "Get Official Contacts",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/artists": {
+            "get": {
+                "tags": [
+                    "Artists"
+                ],
+                "summary": "Get artists",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/artists/{id}": {
+            "get": {
+                "tags": [
+                    "Artists"
+                ],
+                "summary": "Get singe Artist",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/concerts": {
+            "get": {
+                "tags": [
+                    "Concerts"
+                ],
+                "summary": "Get concerts",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "status"
+                    },
+                    {
+                        "in": "query",
+                        "name": "year"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/concerts/{slug}": {
+            "get": {
+                "tags": [
+                    "Concerts"
+                ],
+                "summary": "Get singe concert",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "slug",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/gallery": {
+            "get": {
+                "tags": [
+                    "Gallery"
+                ],
+                "summary": "Get Gallery",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/gallery/{id}": {
+            "get": {
+                "tags": [
+                    "Gallery"
+                ],
+                "summary": "Get singe Gallery",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/partners": {
+            "get": {
+                "tags": [
+                    "Partners"
+                ],
+                "summary": "Get Partners",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/settings": {
+            "get": {
+                "tags": [
+                    "General settings"
+                ],
+                "summary": "Get settings",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/donation": {
+            "get": {
+                "tags": [
+                    "Donation"
+                ],
+                "summary": "Donation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/accreditation": {
+            "get": {
+                "tags": [
+                    "Accreditation"
+                ],
+                "summary": "Donation",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/accreditation_form": {
+            "post": {
+                "tags": [
+                    "Accreditation"
+                ],
+                "summary": "Submit  Accreditation form",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/accreditation"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/live": {
+            "get": {
+                "tags": [
+                    "Live"
+                ],
+                "summary": "Live stream",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/elastic/search": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Get result",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit"
+                    },
+                    {
+                        "in": "query",
+                        "name": "search"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/elastic/sync": {
+            "get": {
+                "tags": [
+                    "Elasticsearch synchronization"
+                ],
+                "summary": "Get result",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "schema": {
+                            "$ref": "#/definitions/defaultSuccess"
+                        }
+                    },
+                    "400": {
+                        "description": "error",
+                        "schema": {
+                            "$ref": "#/definitions/defaultError"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "defaultError": {
+            "allOf": [
+                {
+                    "properties": {
+                        "code": {
+                            "type": "integer"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "params": {
+                            "type": "object"
+                        }
+                    }
+                }
+            ]
+        },
+        "defaultSuccess": {
+            "allOf": [
+                {
+                    "properties": {
+                        "code": {
+                            "type": "integer"
+                        },
+                        "status": {
+                            "type": "string"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "params": {
+                            "type": "object"
+                        }
+                    }
+                }
+            ]
+        },
+        "accreditation":{
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "birth_date": {
+                    "type": "string"
+                },
+                "citizenship": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                },
+                "home_phone": {
+                    "type": "string"
+                },
+                "cell": {
+                    "type": "string"
+                },
+                "name_of_organization": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string"
+                },
+                "type_of_medium": {
+                    "type": "string"
+                },
+                "web_address": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "apt": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                },
+                "org_country": {
+                    "type": "string"
+                },
+                "org_phone": {
+                    "type": "string"
+                },
+                "ex": {
+                    "type": "string"
+                },
+                "chief_editor_name": {
+                    "type": "string"
+                },
+                "chief_editor_phone": {
+                    "type": "string"
+                },
+                "chief_editor_email": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
