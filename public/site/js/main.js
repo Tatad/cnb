@@ -219,6 +219,8 @@ $(document).ready(function() {
     }
 
     $(".secondText").on("click", () => hideIntroPage(true));
+    $(".customText").on("click", () => hideIntroPage(true));
+    $(".customText").on("click", () => console.log('clicked') );
 
     function textAnimation(
         selector,
