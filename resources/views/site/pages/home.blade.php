@@ -26,6 +26,10 @@
 @section('content')
     <audio id="backgroundMusic" loop src="site/media/audio/backgroundMusic.mp3"></audio>
     <div class="introWrapper">
+        <div class="customText">
+                <div class="line"></div>
+                SKIP
+            </div>
         <h2 class="title">Welcome to</h2>
         <div class="introLogo">
             <div class="introLogoDark"></div>

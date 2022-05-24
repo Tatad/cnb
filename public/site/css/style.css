@@ -363,8 +363,17 @@
 }
 
 .home-page .sliderSection > .swiper-container .swiper-wrapper {
-  height: 31.8vw;
+  /*height: 31.8vw;*/
+  height: 19.2vw;
   will-change: transform;
+}
+
+@media (max-width: 480px){
+  .sliderSection .swiper-container .swiper-wrapper {
+      /*height: 100vw;
+      width:50% !important;*/
+      display: none;
+  }
 }
 
 .home-page .sliderSection > .swiper-container .swiper-wrapper .swiper-slide {
@@ -1023,6 +1032,27 @@
   color: #efd0c5;
   pointer-events: none;
   padding: 1rem;
+}
+@media (min-width: 480px) {
+  .customText{
+    top: 90% !important;
+    left: 95% !important;
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 480px) {
+  .customText{
+    top: 90% !important;
+    left: 90% !important;
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
 
 .introWrapper .actionText .secondText::after {
