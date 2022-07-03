@@ -43,7 +43,7 @@
 
                 <div class="right-content">
                     <h2 class="requestCallback">{{ $data['form_title'] }}</h2>
-                    <form class="formBlock" id="requestCallbackForm" itemscope>
+                    <form class="formBlock" id="requestCallbackForm" itemscope action="/contacts/call_back" method="POST">
                         <div class="inputWrapper">
                             <input itemprop="name-input" placeholder="." id="nameInput" spellCheck="false" type="text" name="name" required>
                             <label for="nameInput" class="initialLabel">name</label>
@@ -58,7 +58,7 @@
                             <input itemprop="emailphone-input" placeholder="." id="email" spellCheck="false" name="email" required>
                             <label for="email" class="initialLabel">e-mail</label>
                         </div>
-                        <button itemprop="submit-input" class="linkItem">
+                        <button itemprop="submit-input" class="linkItem" type="submit">
                             Submit
                         </button>
                     </form>
