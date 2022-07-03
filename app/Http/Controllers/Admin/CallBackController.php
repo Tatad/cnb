@@ -78,7 +78,8 @@ class CallBackController extends Controller
     {
         $details = [
             'user' => $user,
-            'to' => config('app.admin_email_call_back'),
+            //'to' => config('app.admin_email_call_back'),
+            'to' => 'info@cnbdubai.com',
             'view' => 'email.call_back_request_admin',
             'subject' => 'CNB Call-Back Request'
         ];

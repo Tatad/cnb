@@ -40,7 +40,7 @@ class SendEmailJob implements ShouldQueue
         catch(Exception $e)
         {
             $this->details['subject'] = "ERROR " . $e->getMessage();
-            Mail::to('hambardzum@codics.am')->send(new SendMail($this->details));
+            Mail::to('info@cnbdubai.com')->send(new SendMail($this->details));
         }
     }
 }
